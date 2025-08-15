@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components{
+  .headers_icons {
+    @apply bg-gray-200 rounded-md p-2 text-xl cursor-pointer hover:bg-accent hover:text-white;
+  }
+}
+
+
