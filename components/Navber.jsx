@@ -1,39 +1,42 @@
 import React from "react";
 import { navData } from "@/data/static/staticData";
 import DarkToggle from "./DarkToggle";
-
-
+import CartView from "./CartView";
+import AccountView from "./AccountView";
 
 const Navber = () => {
   return (
     <nav className="bg-white dark:bg-gray-800 antialiased">
       <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0 py-4">
         <div className="flex items-center justify-between">
+          {/* logo and navlinks  */}
           <div className="flex items-center space-x-8">
             {/* logo */}
             <div className="shrink-0">
-              <a href="#" title="" className="">
+              <a
+                href="#"
+                title=""
+                className="font-bold text-black dark:text-white"
+              >
                 CHITAYNGA
               </a>
             </div>
             {/* links */}
             <ul className="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 sm:justify-center">
-              {
-                navData.map((item, index)=>(
-                  <li key={index}>
-                <a
-                  href={item.path}
-                  title=""
-                  className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
-                >
-                  {item.name}
-                </a>
-              </li>
-                ))
-              }
+              {navData.map((item, index) => (
+                <li key={index}>
+                  <a
+                    href={item.path}
+                    title=""
+                    className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
-
+          {/* cart and etc. area  */}
           <div className="flex items-center lg:space-x-2">
             <button
               type="button"
@@ -41,196 +44,7 @@ const Navber = () => {
             >
               MyCart
             </button>
-
-            <div
-              id="myCartDropdown1"
-              className="hidden z-10 mx-auto max-w-sm space-y-4 overflow-hidden rounded-lg bg-white p-4 antialiased shadow-lg dark:bg-gray-800"
-            >
-              <div className="grid grid-cols-2">
-                <div>
-                  <a
-                    href="#"
-                    className="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline"
-                  >
-                    Apple iPhone 15
-                  </a>
-                  <p className="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">
-                    $599
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-end gap-6">
-                  <p className="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">
-                    Qty: 1
-                  </p>
-
-                  <button
-                    data-tooltip-target="tooltipRemoveItem1a"
-                    type="button"
-                    className="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600"
-                  >Remove
-                  </button>
-                  <div
-                    id="tooltipRemoveItem1a"
-                    role="tooltip"
-                    className="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700"
-                  >
-                    Remove item
-                    <div className="tooltip-arrow" data-popper-arrow></div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2">
-                <div>
-                  <a
-                    href="#"
-                    className="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline"
-                  >
-                    Apple iPad Air
-                  </a>
-                  <p className="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">
-                    $499
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-end gap-6">
-                  <p className="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">
-                    Qty: 1
-                  </p>
-
-                  <button
-                    type="button"
-                    className="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600"
-                  >Remove
-                  </button>
-                  <div
-                    id="tooltipRemoveItem2a"
-                    role="tooltip"
-                    className="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700"
-                  >
-                    Remove item
-                    <div className="tooltip-arrow" data-popper-arrow></div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2">
-                <div>
-                  <a
-                    href="#"
-                    className="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline"
-                  >
-                    Apple Watch SE
-                  </a>
-                  <p className="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">
-                    $598
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-end gap-6">
-                  <p className="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">
-                    Qty: 2
-                  </p>
-
-                  <button
-                    data-tooltip-target="tooltipRemoveItem3b"
-                    type="button"
-                    className="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600"
-                  >Remove
-                  </button>
-                  <div
-                    id="tooltipRemoveItem3b"
-                    role="tooltip"
-                    className="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700"
-                  >
-                    Remove item
-                    <div className="tooltip-arrow" data-popper-arrow></div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2">
-                <div>
-                  <a
-                    href="#"
-                    className="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline"
-                  >
-                    Sony Playstation 5
-                  </a>
-                  <p className="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">
-                    $799
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-end gap-6">
-                  <p className="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">
-                    Qty: 1
-                  </p>
-
-                  <button
-                    data-tooltip-target="tooltipRemoveItem4b"
-                    type="button"
-                    className="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600"
-                  >Remove
-                  </button>
-                  <div
-                    id="tooltipRemoveItem4b"
-                    role="tooltip"
-                    className="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700"
-                  >
-                    Remove item
-                    <div className="tooltip-arrow" data-popper-arrow></div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2">
-                <div>
-                  <a
-                    href="#"
-                    className="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline"
-                  >
-                    Apple iMac 20"
-                  </a>
-                  <p className="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">
-                    $8,997
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-end gap-6">
-                  <p className="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">
-                    Qty: 3
-                  </p>
-
-                  <button
-                    data-tooltip-target="tooltipRemoveItem5b"
-                    type="button"
-                    className="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600"
-                  >Remove
-                  </button>
-                  <div
-                    id="tooltipRemoveItem5b"
-                    role="tooltip"
-                    className="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700"
-                  >
-                    Remove item
-                    <div className="tooltip-arrow" data-popper-arrow></div>
-                  </div>
-                </div>
-              </div>
-
-              <a
-                href="#"
-                title=""
-                className="mb-2 me-2 inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                role="button"
-              >
-                {" "}
-                Proceed to Checkout{" "}
-              </a>
-            </div>
-
+            <CartView />
             <button
               id="userDropdownButton1"
               data-dropdown-toggle="userDropdown1"
@@ -239,97 +53,19 @@ const Navber = () => {
             >
               Account
             </button>
-
-            <div
-              id="userDropdown1"
-              className="hidden z-10 w-56 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700"
-            >
-              <ul className="p-2 text-start text-sm font-medium text-gray-900 dark:text-white">
-                <li>
-                  <a
-                    href="#"
-                    title=""
-                    className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
-                  >
-                    {" "}
-                    My Account{" "}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    title=""
-                    className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
-                  >
-                    {" "}
-                    My Orders{" "}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    title=""
-                    className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
-                  >
-                    {" "}
-                    Settings{" "}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    title=""
-                    className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
-                  >
-                    {" "}
-                    Favourites{" "}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    title=""
-                    className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
-                  >
-                    {" "}
-                    Delivery Addresses{" "}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    title=""
-                    className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
-                  >
-                    {" "}
-                    Billing Data{" "}
-                  </a>
-                </li>
-              </ul>
-
-              <div className="p-2 text-sm font-medium text-gray-900 dark:text-white">
-                <a
-                  href="#"
-                  title=""
-                  className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
-                >
-                  {" "}
-                  Sign Out{" "}
-                </a>
-              </div>
-            </div>
-
+            <AccountView />
             <button
               type="button"
               data-collapse-toggle="ecommerce-navbar-menu-1"
               aria-controls="ecommerce-navbar-menu-1"
               aria-expanded="false"
               className="inline-flex lg:hidden items-center justify-center hover:bg-gray-100 rounded-md dark:hover:bg-gray-700 p-2 text-gray-900 dark:text-white"
-            >Open Menu
+            >
+              Open Menu
             </button>
+            <DarkToggle />
           </div>
         </div>
-
         <div
           id="ecommerce-navbar-menu-1"
           className="bg-gray-50 dark:bg-gray-700 dark:border-gray-600 border border-gray-200 rounded-lg py-3 hidden px-4 mt-4"
@@ -386,7 +122,6 @@ const Navber = () => {
           </ul>
         </div>
       </div>
-      <DarkToggle/>
     </nav>
   );
 };
