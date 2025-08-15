@@ -4,7 +4,12 @@ import {Fa} from "react-icons/fa"
 import {BiSun, BiMoon} from "react-icons/bi"
 
 const DarkToggle = () => {
-  const [darkMode, setDarkMode] = useState(localStorage.getItem("theme"));
+  const [darkMode, setDarkMode] = useState(()=>{
+    const stored = localStorage.getItem("theme");
+    if (stored) return stored;
+    const htmlClass = document.documentElement.classList;
+    return htmlClass.contains("dark") ? "dark" : "light";
+  });
   useEffect(() => {
     const Html = document.documentElement;
     const mode = () => {
