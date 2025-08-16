@@ -1,0 +1,299 @@
+[
+  {
+    "CategoryName": "Starter",
+    "name": "Chilli Paneer",
+    "img": "https://cdn.pixabay.com/photo/2024/08/23/07/40/bowl-8991043_640.jpg",
+    "options": [{ "half": "120", "full": "200" }],
+    "description": "Paneer tossed in spicy Indo-Chinese sauce with bell peppers and onions."
+  },
+  {
+    "CategoryName": "Starter",
+    "name": "Tandoori Chicken",
+    "img": "https://cdn.pixabay.com/photo/2016/06/26/22/45/india-1481494_960_720.jpg",
+    "options": [{ "half": "150", "full": "250" }],
+    "description": "Chicken marinated in yogurt and spices, grilled in a traditional tandoor."
+  },
+  {
+    "CategoryName": "Starter",
+    "name": "Hara Bhara Kebab",
+    "img": "https://cdn.pixabay.com/photo/2021/07/14/09/29/chicken-6465555_1280.jpg",
+    "options": [{ "half": "100", "full": "180" }],
+    "description": "Spinach and green pea patties spiced and shallow fried."
+  },
+  {
+    "CategoryName": "Starter",
+    "name": "Paneer Tikka",
+    "img": "https://cdn.pixabay.com/photo/2022/09/30/20/15/tikka-7490195_1280.jpg",
+    "options": [{ "half": "130", "full": "210" }],
+    "description": "Chunks of paneer marinated in spices and grilled with veggies."
+  },
+  {
+    "CategoryName": "Starter",
+    "name": "Chicken Pakora",
+    "img": "https://cdn.pixabay.com/photo/2016/11/08/10/39/chicken-1807883_640.jpg",
+    "options": [{ "half": "120", "full": "200" }],
+    "description": "Boneless chicken pieces deep-fried in spiced gram flour batter."
+  },
+  {
+    "CategoryName": "Starter",
+    "name": "Veg Spring Rolls",
+    "img": "https://media.istockphoto.com/id/1070157508/photo/deep-fried-spring-rolls.jpg?s=2048x2048&w=is&k=20&c=9d4bXJIVjN6IZUhQ2AKeWxdTlAORh0WBeyK2jCt_ttw=",
+    "options": [{ "half": "90", "full": "160" }],
+    "description": "Crispy rolls stuffed with seasoned vegetables and noodles."
+  },
+  {
+    "CategoryName": "Starter",
+    "name": "Fish Fingers",
+    "img": "https://media.istockphoto.com/id/1445743734/photo/fish-fingers.webp?b=1&s=612x612&w=0&k=20&c=_x5HmxXn8QgOAU5V3nt5gDSbirXpVHtLQBcn8CJ4U8A=",
+    "options": [{ "half": "140", "full": "220" }],
+    "description": "Breaded fish strips fried until golden and served with tartar sauce."
+  },
+  {
+    "CategoryName": "Starter",
+    "name": "Corn Cheese Balls",
+    "img": "https://media.istockphoto.com/id/1269399837/photo/zucchini-corn-egg-muffins.jpg?s=612x612&w=0&k=20&c=kKYEGXCjRae11RTIB9JM0JpFM9gUmdgPYt_vaEshF-M=",
+    "options": [{ "half": "100", "full": "170" }],
+    "description": "Crispy balls filled with corn, cheese, and herbs."
+  },
+  {
+    "CategoryName": "Starter",
+    "name": "Chicken Wings",
+    "img": "https://media.istockphoto.com/id/1285462667/photo/fried-chicken-wings-with-sweet-chili-sauce-on-white-paper.jpg?s=612x612&w=0&k=20&c=pQgXFNW-BUEi5lT_b6sahe7y3OUoOtA0CQ89yvfvBas=",
+    "options": [{ "half": "130", "full": "210" }],
+    "description": "Spicy grilled chicken wings served with BBQ sauce."
+  },
+  {
+    "CategoryName": "Starter",
+    "name": "Mutton Seekh Kebab",
+    "img": "https://media.istockphoto.com/id/1330678083/photo/chicken-kebabs.jpg?s=612x612&w=0&k=20&c=bJRerIx4oOoaywqfo9TZY9pzGLO5p5GOlMmH06gVkuE=",
+    "options": [{ "half": "160", "full": "260" }],
+    "description": "Minced mutton skewered and grilled with aromatic spices."
+  },
+  {
+    "CategoryName": "Main Course",
+    "name": "Butter Chicken",
+    "img": "https://media.istockphoto.com/id/1411524598/photo/chicken-tikka-masala-cooked-marinated-chicken-in-spiced-curry-sauce.jpg?s=612x612&w=0&k=20&c=3JLbYigOnTQm-4exK-7uKeI3YoR0g9HxAkjxmuVmfpY=",
+    "options": [{ "half": "180", "full": "320" }],
+    "description": "Creamy tomato-based curry with tender chicken pieces."
+  },
+  {
+    "CategoryName": "Main Course",
+    "name": "Palak Paneer",
+    "img": "https://media.istockphoto.com/id/1308593824/photo/palak-paneer-served-basmati-rice-on-grey-background.jpg?s=612x612&w=0&k=20&c=kbUe5L6Fvwn1SFw95GBB-rzLQAsrp4TqgyWF2XOrYwE=",
+    "options": [{ "half": "140", "full": "240" }],
+    "description": "Spinach puree cooked with paneer cubes and mild spices."
+  },
+  {
+    "CategoryName": "Main Course",
+    "name": "Chicken Biryani",
+    "img": "https://media.istockphoto.com/id/1345624336/photo/chicken-biriyani.jpg?s=612x612&w=0&k=20&c=adU_N0P-1SKMQLZu5yu7aPknfLLgbViI8XILqLP92A4=",
+    "options": [{ "half": "160", "full": "280" }],
+    "description": "Fragrant basmati rice layered with spiced chicken and herbs."
+  },
+  {
+    "CategoryName": "Main Course",
+    "name": "Paneer Butter Masala",
+    "img": "https://media.istockphoto.com/id/915651056/photo/cottage-gravy.jpg?s=612x612&w=0&k=20&c=eUTiZVwTbo3zrMF4vUHilXQxyjDtJzz89_UWdLwW3qk=",
+    "options": [{ "half": "150", "full": "250" }],
+    "description": "Paneer cubes in a rich buttery tomato gravy."
+  },
+  {
+    "CategoryName": "Main Course",
+    "name": "Dal Makhani",
+    "img": "https://media.istockphoto.com/id/1170374719/photo/dal-makhani-at-dark-background.jpg?s=612x612&w=0&k=20&c=49yLaUAE2apakVk2AAiRQimZd98WtSjIQ0hzCzWsmns=",
+    "options": [{ "half": "130", "full": "220" }],
+    "description": "Slow-cooked black lentils in creamy tomato sauce."
+  },
+  {
+    "CategoryName": "Main Course",
+    "name": "Egg Curry",
+    "img": "https://media.istockphoto.com/id/1072940148/photo/fried-egg-curry-or-anda-masala-served-in-a-bowl-selective-focus.jpg?s=612x612&w=0&k=20&c=cYvM9X6VQ0UlQyUEWvFk5VMNS6wg8K0o3kVuVDuwbZU=",
+    "options": [{ "half": "120", "full": "200" }],
+    "description": "Boiled eggs simmered in spicy onion-tomato gravy."
+  },
+  {
+    "CategoryName": "Main Course",
+    "name": "Mutton Rogan Josh",
+    "img": "https://media.istockphoto.com/id/1253934130/photo/mutton-masala-curry-in-plastic-container-for-home-delivery.jpg?s=612x612&w=0&k=20&c=KQTQTS9RK7f4wt1_ZgRuvFsUMvc2MP1GF3yQqgaVShQ=",
+    "options": [{ "half": "200", "full": "350" }],
+    "description": "Kashmiri-style mutton curry with aromatic spices."
+  },
+  {
+    "CategoryName": "Main Course",
+    "name": "Veg Pulao",
+    "img": "https://media.istockphoto.com/id/1222031490/photo/veg-pulao-with-paneer-tikka-masala-and-lachha-paratha.jpg?s=612x612&w=0&k=20&c=ujCLDaBrUQvJblBIUApoRhf4tZ4qLs1pe1Zd1Yq-kXk=",
+    "options": [{ "half": "110", "full": "180" }],
+    "description": "Basmati rice cooked with vegetables and mild spices."
+  },
+  {
+    "CategoryName": "Main Course",
+    "name": "Chicken Korma",
+    "img": "https://media.istockphoto.com/id/1053423374/photo/coconut-chicken-in-a-spicy-cream-sauce-close-up-horizontal-top-view.jpg?s=612x612&w=0&k=20&c=ROQpgzQqLsMnX4IGkrsrKJCOfz7-0P41K3nKKzgN_Pg=",
+    "options": [{ "half": "170", "full": "290" }],
+    "description": "Chicken cooked in creamy cashew and yogurt gravy."
+  },
+  {
+    "CategoryName": "Main Course",
+    "name": "Shahi Paneer",
+    "img": "https://media.istockphoto.com/id/1665320059/photo/indian-paneer-butter-masala-directly-above-photo-on-white-background.jpg?s=612x612&w=0&k=20&c=j93V2k5YgeGYeVQCvsm-hTmC2vGJX1Rj32AmqxTnAzw=",
+    "options": [{ "half": "160", "full": "270" }],
+    "description": "Paneer in rich, royal gravy with nuts and cream."
+  },
+  {
+    "CategoryName": "Dessert",
+    "name": "Gulab Jamun",
+    "img": "https://media.istockphoto.com/id/163064596/photo/gulab-jamun.jpg?s=612x612&w=0&k=20&c=JvJ4AAs-N5pRzzRmVg1lG0talC3QoUt0ZGiO1NKz-kQ=",
+    "options": [{ "half": "60", "full": "100" }],
+    "description": "Milk dumplings soaked in rose-flavored sugar syrup."
+  },
+  {
+    "CategoryName": "Dessert",
+    "name": "Rasmalai",
+    "img": "https://media.istockphoto.com/id/515853026/photo/traditional-rasmalai-or-ras-malai-indian-dessert-bengali-sweet.jpg?s=612x612&w=0&k=20&c=LYftdDAkIa8lVyfmwt8iK-OPSQr2KCcJcYpPhbFtFBk=",
+    "options": [{ "half": "80", "full": "140" }],
+    "description": "Soft paneer patties in saffron-infused milk."
+  },
+  {
+    "CategoryName": "Dessert",
+    "name": "Kheer",
+    "img": "https://media.istockphoto.com/id/1253190663/photo/sweet-roasted-makhana-kheer-is-an-indian-dessert-recipe-served-in-a-bowl-garnished-with-dry.jpg?s=612x612&w=0&k=20&c=bhJtMBn6647w3IqRAOR19ktDTk-MB_3DCek5-ls5okc=",
+    "options": [{ "half": "70", "full": "120" }],
+    "description": "Rice pudding flavored with cardamom and nuts."
+  },
+  {
+    "CategoryName": "Dessert",
+    "name": "Jalebi",
+    "img": "https://media.istockphoto.com/id/1430753492/photo/indian-sweet-jalebi.jpg?s=612x612&w=0&k=20&c=NkShJtvnL1Y3jACu6arXGiOQKN5LtLi-DKak3SlX2N4=",
+    "options": [{ "half": "60", "full": "100" }],
+    "description": "Crispy, coiled sweets soaked in saffron sugar syrup."
+  },
+  {
+    "CategoryName": "Dessert",
+    "name": "Chocolate Brownie",
+    "img": "https://media.istockphoto.com/id/168731372/photo/fresh-homemade-chocolate-brownie.jpg?s=612x612&w=0&k=20&c=DOWddwc5EBO7gedFIL7SC5absmtACBOefRRc8YLyh-w=",
+    "options": [{ "half": "90", "full": "160" }],
+    "description": "Rich chocolate brownie served warm with ice cream."
+  },
+  {
+    "CategoryName": "Dessert",
+    "name": "Fruit Custard",
+    "img": "https://media.istockphoto.com/id/1346316025/photo/fresh-dark-red-grape-background.jpg?s=612x612&w=0&k=20&c=OBtf36ZYdogQXLgFn0OSKqzEfBoMFe1ZQvz7mC73RUA=",
+    "options": [{ "half": "70", "full": "120" }],
+    "description": "Chilled custard mixed with seasonal fruits."
+  },
+  {
+    "CategoryName": "Dessert",
+    "name": "Ice Cream Sundae",
+    "img": "https://media.istockphoto.com/id/1136006564/photo/vanilla-and-chocolate-sundaes-isolated-on-a-white-background.jpg?s=612x612&w=0&k=20&c=XaZo3aopn_SWTXH3dNVxw5v79zi3cI8MX4LbtO7dn9s=",
+    "options": [{ "half": "100", "full": "180" }],
+    "description": "Scoops of ice cream topped with chocolate syrup and nuts."
+  },
+  {
+    "CategoryName": "Dessert",
+    "name": "Moong Dal Halwa",
+    "img": "https://media.istockphoto.com/id/1256978725/photo/moong-dal-halwa-or-mung-daal-halva-is-an-indian-sweet-dessert-recipe-garnished-with-dry-fruits.jpg?s=612x612&w=0&k=20&c=3C3TzD6l28y9C_AlobiVHPAsIaNR6xE6rRIGITFepuA=",
+    "options": [{ "half": "80", "full": "140" }],
+    "description": "Rich lentil dessert cooked in ghee and garnished with dry fruits."
+  },
+  {
+    "CategoryName": "Beverage",
+    "name": "Masala Chai",
+    "img": "https://media.istockphoto.com/id/1297483389/photo/masala-tea-chai.jpg?s=612x612&w=0&k=20&c=Pv-QROSSywNh_qzHIIjHJeJB7OT0ujrKQsSiTgOmJAs=",
+    "options": [{ "half": "30", "full": "50" }],
+    "description": "Spiced Indian tea brewed with milk and aromatic herbs."
+  },
+  {
+    "CategoryName": "Beverage",
+    "name": "Mango Lassi",
+    "img": "https://media.istockphoto.com/id/1365859011/photo/drink-mango-lassi-in-two-glasses-on-rustic-concrete-table-with-fresh-ripe-cut-manfo-from-above.jpg?s=612x612&w=0&k=20&c=uHnr_0raQDe2sgUYHdP5GSa2raaj3ILG4m1cmFHtVJA=",
+    "options": [{ "half": "40", "full": "70" }],
+    "description": "Sweet mango yogurt drink, chilled and refreshing."
+  },
+  {
+    "CategoryName": "Beverage",
+    "name": "Cold Coffee",
+    "img": "https://media.istockphoto.com/id/1419086719/photo/ice-coffee-in-a-tall-glass-with-cream-poured-over-and-coffee-beans-set-with-different-types.jpg?s=612x612&w=0&k=20&c=0wKOT5uA_JuPSn-2RDPJC733IE7o9z3tlC_z_vRxLd0=",
+    "options": [{ "half": "60", "full": "100" }],
+    "description": "Chilled coffee blended with milk and sugar."
+  },
+  {
+    "CategoryName": "Beverage",
+    "name": "Fresh Lime Soda",
+    "img": "https://media.istockphoto.com/id/1386857075/photo/summer-refreshing-carbonated-drink-drinks-with-sparkling-mineral-water.jpg?s=612x612&w=0&k=20&c=en85g-KOl_GL7K9UeVUd-VxZgw_iSoKS3t9AjkUCM1I=",
+    "options": [{ "half": "40", "full": "70" }],
+    "description": "Refreshing soda with lime juice and a pinch of salt."
+  },
+  {
+    "CategoryName": "Beverage",
+    "name": "Watermelon Juice",
+    "img": "https://media.istockphoto.com/id/2001751087/photo/refreshing-watermelon-juice-with-slice-decoration-in-summer-garden-background.jpg?s=612x612&w=0&k=20&c=E0ame2DaJ458uq8-5RCT-XBUJ2rMDhfF2Pk3sD3VFuc=",
+    "options": [{ "half": "50", "full": "90" }],
+    "description": "Fresh watermelon juice served chilled."
+  },
+  {
+    "CategoryName": "Beverage",
+    "name": "Strawberry Shake",
+    "img": "https://media.istockphoto.com/id/1790684411/photo/iced-strawberry-milk-or-rose-milk-served-in-disposable-glass-with-ice-cube-isolated-on-wooden.jpg?s=612x612&w=0&k=20&c=E_8BXDJKUti7R6I_cAVAfC7g-4mKWxh7VSlSZ3CjKgI=",
+    "options": [{ "half": "70", "full": "120" }],
+    "description": "Creamy strawberry milkshake topped with whipped cream."
+  },
+  {
+    "CategoryName": "Beverage",
+    "name": "Coconut Water",
+    "img": "https://media.istockphoto.com/id/1413187059/photo/coconut-juice-drink-coconut-water.jpg?s=612x612&w=0&k=20&c=zAUxtvUMbi2KkiZJ_5yniChR0nWP4zOixrh6TcrUq5M=",
+    "options": [{ "half": "30", "full": "50" }],
+    "description": "Natural coconut water served fresh from the shell."
+  },
+  {
+    "CategoryName": "Beverage",
+    "name": "Sweet Lassi",
+    "img": "https://media.istockphoto.com/id/1008799838/photo/image-of-a-glass-of-lassi-made-from-milk-curd.jpg?s=612x612&w=0&k=20&c=L--UXX-L2bsK6Jy-mEigONFj9QEJyvU8b77FJnBLpBg=",
+    "options": [{ "half": "40", "full": "70" }],
+    "description": "Traditional Punjabi yogurt drink sweetened and chilled."
+  },
+  {
+    "CategoryName": "Beverage",
+    "name": "Green Tea",
+    "img": "https://media.istockphoto.com/id/628986454/photo/glass-cup-with-fresh-green-tea.jpg?s=612x612&w=0&k=20&c=XaspjM0PSAzw8rvNJA-C2BE95-xXbDzhwJRYodIh8Dc=",
+    "options": [{ "half": "30", "full": "50" }],
+    "description": "Light and healthy green tea served hot."
+  },
+  {
+    "CategoryName": "Beverage",
+    "name": "Orange Juice",
+    "img": "https://media.istockphoto.com/id/1400831765/photo/yellow-orange-fruits-and-fresh-orange-juice-squeezing-out-the-fresh-orange.jpg?s=612x612&w=0&k=20&c=xpWFvGCslilHVUXmSKlsuBHCURFUS54QZCB_Prqv_oI=",
+    "options": [{ "half": "50", "full": "90" }],
+    "description": "Freshly squeezed orange juice with pulp."
+  },
+  {
+    "CategoryName": "Beverage",
+    "name": "Iced Tea",
+    "img": "https://media.istockphoto.com/id/1401730890/photo/pitcher-of-cold-ice-tea-with-rural-summer-background.jpg?s=612x612&w=0&k=20&c=VJzr4VCSJR5yXxZaBUvUv2ltrntv3i6r08UBf4Oooc4=",
+    "options": [{ "half": "60", "full": "100" }],
+    "description": "Chilled tea with lemon and mint."
+  },
+  {
+    "CategoryName": "Beverage",
+    "name": "Chocolate Shake",
+    "img": "https://media.istockphoto.com/id/1183223263/photo/homemade-chocolate-cake-milkshake.jpg?s=612x612&w=0&k=20&c=K8rVqy6pa1Hj7D_ksFQw5pY-Th01DnjVpDm6qFYcGbc=",
+    "options": [{ "half": "70", "full": "120" }],
+    "description": "Thick chocolate milkshake topped with choco chips."
+  },
+  {
+    "CategoryName": "Beverage",
+    "name": "Buttermilk",
+    "img": "https://media.istockphoto.com/id/535471850/photo/spiced-buttermilk-selective-focus.jpg?s=612x612&w=0&k=20&c=bcPpZiWUxXlraC6HuihotpsAhu0sReUbpTsZyqKtYYQ=",
+    "options": [{ "half": "30", "full": "50" }],
+    "description": "Spiced yogurt drink perfect for digestion."
+  },
+  {
+    "CategoryName": "Beverage",
+    "name": "Pineapple Juice",
+    "img": "https://media.istockphoto.com/id/1419572486/photo/pineapple-juice.jpg?s=612x612&w=0&k=20&c=9Y9rEw-iIABkfLs5xmpiDksEkBg-ZYNj2TBQtHHT0qY=",
+    "options": [{ "half": "50", "full": "90" }],
+    "description": "Tropical pineapple juice served chilled."
+  }
+]
+
+
+

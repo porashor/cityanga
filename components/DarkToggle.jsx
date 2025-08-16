@@ -27,7 +27,6 @@ const DarkToggle = () => {
     };
     mode();
   }, [darkMode]);
-  console.log()
   return (
     <div>
       <button

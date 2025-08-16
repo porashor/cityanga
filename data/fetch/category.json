@@ -1,0 +1,66 @@
+[
+  {
+    "name": "starter",
+    "img": "https://images.pexels.com/photos/3297882/pexels-photo-3297882.jpeg"
+  },
+  {
+    "name": "dessert",
+    "img": "https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg"
+  },
+  {
+    "name": "beverage",
+    "img": "https://images.pexels.com/photos/338713/pexels-photo-338713.jpeg"
+  },
+  {
+    "name": "bangladeshi food",
+    "img": "https://media.istockphoto.com/id/1152493500/photo/authentic-indian-dishes-and-snacks.jpg?b=1&s=612x612&w=0&k=20&c=YM4li3uEOU06DS2ANqMgqmRaH3isYLjW9c2d7fjVwJg="
+  },
+  {
+    "name": "chinese food",
+    "img": "https://images.pexels.com/photos/1907228/pexels-photo-1907228.jpeg"
+  },
+  {
+    "name": "fruit item",
+    "img": "https://images.pexels.com/photos/3020318/pexels-photo-3020318.jpeg"
+  },
+  {
+    "name": "hala food",
+    "img": "https://images.pexels.com/photos/8180763/pexels-photo-8180763.jpeg"
+  },
+  {
+    "name": "meat",
+    "img": "https://images.pexels.com/photos/65175/pexels-photo-65175.jpeg"
+  },
+  {
+    "name": "vegetable",
+    "img": "https://images.pexels.com/photos/6631955/pexels-photo-6631955.jpeg"
+  },
+  {
+    "name": "spicy food",
+    "img": "https://images.pexels.com/photos/1262012/pexels-photo-1262012.jpeg"
+  },
+  {
+    "name": "sweet food",
+    "img": "https://images.pexels.com/photos/33378143/pexels-photo-33378143.jpeg"
+  },
+  {
+    "name": "steed food",
+    "img": "https://images.pexels.com/photos/2010701/pexels-photo-2010701.jpeg"
+  },
+  {
+    "name": "alcholol",
+    "img": "https://images.pexels.com/photos/1089930/pexels-photo-1089930.jpeg"
+  },
+  {
+    "name": "milk food",
+    "img": "https://images.pexels.com/photos/3872437/pexels-photo-3872437.jpeg"
+  },
+  {
+    "name": "khicuri",
+    "img": "https://media.istockphoto.com/id/1466986410/photo/khicuri.jpg?s=2048x2048&w=is&k=20&c=YJLwEgrzlhYAenLFWpgZYjwF8XuGHxzrL8L4zpfnEWM="
+  },
+  {
+    "name": "kabab",
+    "img": "https://images.pexels.com/photos/14731642/pexels-photo-14731642.jpeg"
+  }
+]
