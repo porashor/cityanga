@@ -1,10 +1,17 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { navData } from "@/data/static/staticData";
 import DarkToggle from "./DarkToggle";
 import CartView from "./CartView";
 import AccountView from "./AccountView";
+import Popup from "./Popup";
+import SignUp from "./SignUp";
+import Login from "./Login";
 
 const Navber = () => {
+  const [open, setOpen] = useState(false);
+  const [user, setUser] = useState(false);
+  const [targetForm, setTargetForm] = useState(false);
   return (
     <nav className="bg-[#f5f5f5] dark:bg-gray-800 antialiased">
       <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0 py-4">
@@ -38,21 +45,8 @@ const Navber = () => {
           </div>
           {/* cart and etc. area  */}
           <div className="flex items-center lg:space-x-2">
-            <button
-              type="button"
-              className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
-            >
-              MyCart
-            </button>
             <CartView />
-            <button
-              id="userDropdownButton1"
-              data-dropdown-toggle="userDropdown1"
-              type="button"
-              className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
-            >
-              Account
-            </button>
+
             <AccountView />
             <button
               type="button"
@@ -64,6 +58,40 @@ const Navber = () => {
               Open Menu
             </button>
             <DarkToggle />
+            {/* //user handling */}
+            {user ? (
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
+                >
+                  MyCart
+                </button>
+                <button
+                  id="userDropdownButton1"
+                  data-dropdown-toggle="userDropdown1"
+                  type="button"
+                  className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
+                >
+                  Account
+                </button>
+              </div>
+            ) : (
+              <div className="flex gap-2">
+                <button
+                  onClick={() => {setOpen(true); setTargetForm(true)}}
+                  className="dark:text-white"
+                >
+                  SignUp
+                </button>
+                <button
+                  onClick={() =>  {setOpen(true); setTargetForm(false)}}
+                  className="dark:text-white"
+                >
+                  LogIn
+                </button>
+              </div>
+            )}
           </div>
         </div>
         <div
@@ -122,6 +150,11 @@ const Navber = () => {
           </ul>
         </div>
       </div>
+      <Popup isOpen={open} onClose={setOpen}>
+        {
+          targetForm ? <SignUp falsei={setTargetForm}/> : <Login truthy={setTargetForm}/>
+        }
+      </Popup>
     </nav>
   );
 };

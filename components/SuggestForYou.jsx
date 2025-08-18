@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const SuggestForYou = async ({lengthAmount}) => {
   const data = await getData('product')
-  const all = lengthAmount === 0 ? data.length : lengthAmount
+  const all = lengthAmount === 0 ? data?.length : lengthAmount
   const suggest = data?.slice(0, all)
   return (
     <div className='my-5 dark:bg-[#192c3f] bg-[#ececec] '>

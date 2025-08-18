@@ -1,9 +1,74 @@
 export const getData = async (params) => {
-    try{
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${params}`)
-    const data = await res.json()
-    return data
-  }catch(err){
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${params}`);
+    const data = await res.json();
+    return data;
+  } catch (err) {
     console.log(err);
   }
 };
+
+export const userInitialState = {
+  name: "",
+  email: "",
+  password: "",
+};
+
+export function userReducer(state, action) {
+  switch (action.type) {
+    case "SET_FIELD":
+      return { ...state, [action.field]: action.value };
+    case "RESET":
+      return initialState;
+    default:
+      return state;
+  }
+}
+
+export const handleFunction = (e, dispatch) => {
+  dispatch({
+    type: "SET_FIELD",
+    field: e.target.name,
+    value: e.target.value,
+  });
+};
+
+
+export const createUser = async (e, formData)=>{
+  e.preventDefault();
+  try{
+    const user = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+    const newUser = await user.json();
+    console.log(newUser)
+    alert("user cerated")
+  }catch{
+    console.log("user not cerated")
+    alert("user not cerated")
+  }
+}
+
+export const logUser = async(e, formData)=>{
+  try{
+    const user = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/loguser`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: formData.email,
+        password: formData.password
+      }),
+    })
+    const newUser = await user.json();
+    console.log(newUser)
+    alert("user loged in")
+  }catch{
+    alert("user not loged in")
+  }
+}
