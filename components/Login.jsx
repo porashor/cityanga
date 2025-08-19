@@ -1,5 +1,6 @@
 'use client'
 import React, {useReducer} from "react";
+import { useRouter } from 'next/navigation';
 import { userInitialState, userReducer, handleFunction, logUser } from "@/functions/FatchFunction";
 
 
@@ -8,12 +9,13 @@ import { userInitialState, userReducer, handleFunction, logUser } from "@/functi
 
 
 const Login = ({truthy}) => {
+    const router = useRouter();
     const [formData, dispatch] = useReducer(userReducer, userInitialState);
 
     console.log(formData)
   return (
     <form
-      onSubmit={(e) => logUser(e, formData)}
+      onSubmit={(e) => logUser(e, formData, )}
       className="max-w-md mx-auto bg-white dark:bg-[#1f2a37] dark:text-white p-6 rounded-lg shadow-md space-y-4"
     >
       <h2 className="text-2xl font-bold text-center mb-4">LogIn</h2>

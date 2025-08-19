@@ -53,7 +53,8 @@ export const createUser = async (e, formData)=>{
   }
 }
 
-export const logUser = async(e, formData)=>{
+export const logUser = async(e, formData, router)=>{
+  e.preventDefault();
   try{
     const user = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/loguser`, {
       method: "POST",
@@ -66,9 +67,18 @@ export const logUser = async(e, formData)=>{
       }),
     })
     const newUser = await user.json();
+    localStorage.setItem("token", newUser.token)
+    if(newUser){
+      router.push("/")
+    }
     console.log(newUser)
     alert("user loged in")
   }catch{
     alert("user not loged in")
   }
 }
+
+export const logoutUser = ()=>{
+  localStorage.removeItem("token")
+}
+
