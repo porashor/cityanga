@@ -1,10 +1,10 @@
 import React from "react";
 
-const CartView = () => {
+const CartView = ({openCart}) => {
   return (
     <div
       id="myCartDropdown1"
-      className="hidden z-10 mx-auto max-w-sm space-y-4 overflow-hidden rounded-lg bg-white p-4 antialiased shadow-lg dark:bg-gray-800"
+      className={`${openCart? "" : "hidden"} absolute top-10 right-0 z-10 w-80 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700 px-5 py-4`}
     >
       <div className="grid grid-cols-2">
         <div>

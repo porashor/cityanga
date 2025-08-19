@@ -68,9 +68,6 @@ export const logUser = async(e, formData, router)=>{
     })
     const newUser = await user.json();
     localStorage.setItem("token", newUser.token)
-    if(newUser){
-      router.push("/")
-    }
     console.log(newUser)
     alert("user loged in")
   }catch{

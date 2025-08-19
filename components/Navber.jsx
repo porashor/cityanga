@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { jwtDecode } from "jwt-decode";
 import { navData } from "@/data/static/staticData";
 import DarkToggle from "./DarkToggle";
 import CartView from "./CartView";
@@ -12,6 +13,21 @@ const Navber = () => {
   const [open, setOpen] = useState(false);
   const [user, setUser] = useState(false);
   const [targetForm, setTargetForm] = useState(false);
+  const [data, setData] = useState({});
+  const [openAccount, setOpenAccount] = useState(false)
+  const [openCart, setCart] = useState(false)
+
+
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const maindata = jwtDecode(token);
+    setData(maindata);
+    if (token) {
+      setUser(true);
+    }
+  }, [])
+  console.log(data)
   return (
     <nav className="bg-[#f5f5f5] dark:bg-gray-800 antialiased">
       <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0 py-4">
@@ -44,10 +60,10 @@ const Navber = () => {
             </ul>
           </div>
           {/* cart and etc. area  */}
-          <div className="flex items-center lg:space-x-2">
-            <CartView />
+          <div className="flex items-center lg:space-x-2 relative">
+            <CartView openCart={openCart}/>
 
-            <AccountView />
+            <AccountView openAccount={openAccount}/>
             <button
               type="button"
               data-collapse-toggle="ecommerce-navbar-menu-1"
@@ -62,14 +78,14 @@ const Navber = () => {
             {user ? (
               <div className="flex gap-2">
                 <button
+                onClick={() => {setOpenAccount(false); setCart(!openCart)}}
                   type="button"
                   className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
                 >
                   MyCart
                 </button>
                 <button
-                  id="userDropdownButton1"
-                  data-dropdown-toggle="userDropdown1"
+                  onClick={() => {setOpenAccount(!openAccount); setCart(false)}}
                   type="button"
                   className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
                 >
