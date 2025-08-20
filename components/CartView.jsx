@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useReducer } from "react";
+import { cartInitState, cartReducer } from "@/functions/FatchFunction";
+
 
 const CartView = ({openCart}) => {
+  const [cardData, dispatch] = useReducer(cartInitState, cartReducer)
   return (
     <div
       id="myCartDropdown1"

@@ -1,3 +1,4 @@
+import { logoutUser } from "@/functions/FatchFunction";
 import React from "react";
 
 const AccountView = ({ openAccount }) => {
@@ -9,7 +10,7 @@ const AccountView = ({ openAccount }) => {
       <ul className="p-2 text-start text-sm font-medium text-gray-900 dark:text-white">
         <li>
           <a
-            href="#"
+            href="/account"
             title=""
             className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
           >
@@ -19,7 +20,7 @@ const AccountView = ({ openAccount }) => {
         </li>
         <li>
           <a
-            href="#"
+            href="order"
             title=""
             className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
           >
@@ -71,7 +72,7 @@ const AccountView = ({ openAccount }) => {
 
       <div className="p-2 text-sm font-medium text-gray-900 dark:text-white">
         <a
-          href="#"
+          onClick={logoutUser}
           title=""
           className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
         >

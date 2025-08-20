@@ -79,3 +79,11 @@ export const logoutUser = ()=>{
   localStorage.removeItem("token")
 }
 
+export const cartInitState = []
+
+export const cartReducer = (state, action)=>{
+  //
+}
+
+
+

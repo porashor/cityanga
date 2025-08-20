@@ -21,10 +21,11 @@ const Navber = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    const maindata = jwtDecode(token);
-    setData(maindata);
+    console.log(token)
     if (token) {
+      const maindata = jwtDecode(token);
       setUser(true);
+      setData(maindata);
     }
   }, [])
   console.log(data)
