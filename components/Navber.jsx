@@ -16,19 +16,37 @@ const Navber = () => {
   const [data, setData] = useState({});
   const [openAccount, setOpenAccount] = useState(false)
   const [openCart, setCart] = useState(false)
+  const [cartQuantity, setCartQuantity] = useState({})
+
+  
 
 
-
-  useEffect(() => {
+  useEffect( () => {
     const token = localStorage.getItem("token");
     console.log(token)
     if (token) {
       const maindata = jwtDecode(token);
       setUser(true);
       setData(maindata);
+      const gettingData = async () => {
+        try{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart/${maindata.email}`);
+      const data1 = await res.json();
+      setCartQuantity(data1)
+      console.log(data1)
+      }catch(err){
+        console.log(err)
+      }
+      }
+      gettingData();
     }
   }, [])
+  
   console.log(data)
+
+
+  console.log(cartQuantity)
+
   return (
     <nav className="bg-[#f5f5f5] dark:bg-gray-800 antialiased">
       <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0 py-4">
@@ -62,7 +80,7 @@ const Navber = () => {
           </div>
           {/* cart and etc. area  */}
           <div className="flex items-center lg:space-x-2 relative">
-            <CartView openCart={openCart}/>
+            <CartView openCart={openCart} cartData={cartQuantity}/>
 
             <AccountView openAccount={openAccount}/>
             <button
@@ -83,7 +101,7 @@ const Navber = () => {
                   type="button"
                   className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
                 >
-                  MyCart
+                  MyCart{cartQuantity?.product?.length > 0 ? `(${cartQuantity.product.length})` : ""}
                 </button>
                 <button
                   onClick={() => {setOpenAccount(!openAccount); setCart(false)}}

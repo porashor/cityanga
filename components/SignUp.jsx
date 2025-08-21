@@ -43,6 +43,18 @@ const SignUp = ({falsei}) => {
       </div>
 
       <div>
+        <label className="block mb-1 font-medium">Location</label>
+        <input
+          type="text"
+          name="location"
+          value={formData.location}
+          onChange={(e)=>handleFunction(e, dispatch)}
+          className="w-full border px-3 py-2 rounded text-black focus:outline-none focus:ring"
+        />
+        
+      </div>
+
+      <div>
         <label className="block mb-1 font-medium">Password</label>
         <input
           type="password"

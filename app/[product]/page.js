@@ -1,9 +1,10 @@
 import PricingHandle from "@/components/PricingHandle";
+import UserDetails from "@/components/UserDetails";
 import { getData } from "@/functions/FatchFunction";
 import Image from "next/image";
 
 const page = async ({ params }) => {
-  const { product } = params;
+  const { product } = await params;
   const data = await getData(`product/${product}`);
   return (
     <div className="dark:bg-[#152433] dark:text-white py-3 bg-[#f5f5f5]">
@@ -14,7 +15,7 @@ const page = async ({ params }) => {
           {">"}
           {data.name}
         </div>
-        <div className="bg-white dark:bg-[#162839] py-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_3fr_2fr] gap-2 px-2">
+        <div className="bg-white dark:bg-[#162839] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_3fr_2fr] gap-2">
           <div>
             <Image
             alt="no img"
@@ -32,8 +33,11 @@ const page = async ({ params }) => {
             <div className="pb-4">Brand: {"Our product"}</div>
             <hr />
             <div>
-              <PricingHandle options={data.options}/>
+              <PricingHandle options={data.options} fullProductData={data}/>
             </div>
+          </div>
+          <div className="bg-[#f3f3f3] dark:bg-[#192c3f] py-5">
+            <UserDetails/>
           </div>
         </div>
       </div>
