@@ -4,7 +4,7 @@ import { getData } from "@/functions/FatchFunction";
 import Image from "next/image";
 
 const page = async ({ params }) => {
-  const { product } = await params;
+  const { product } = await params ?? { product: "" };
   const data = await getData(`product/${product}`);
   return (
     <div className="dark:bg-[#152433] dark:text-white py-3 bg-[#f5f5f5]">
