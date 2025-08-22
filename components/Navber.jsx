@@ -8,6 +8,7 @@ import AccountView from "./AccountView";
 import Popup from "./Popup";
 import SignUp from "./SignUp";
 import Login from "./Login";
+import { BiMenu } from "react-icons/bi";
 
 const Navber = () => {
   const [open, setOpen] = useState(false);
@@ -56,8 +57,7 @@ const Navber = () => {
             {/* logo */}
             <div className="shrink-0">
               <a
-                href="#"
-                title=""
+                href="/"
                 className="font-bold text-black dark:text-white"
               >
                 CHITAYNGA
@@ -85,12 +85,9 @@ const Navber = () => {
             <AccountView openAccount={openAccount}/>
             <button
               type="button"
-              data-collapse-toggle="ecommerce-navbar-menu-1"
-              aria-controls="ecommerce-navbar-menu-1"
-              aria-expanded="false"
               className="inline-flex lg:hidden items-center justify-center hover:bg-gray-100 rounded-md dark:hover:bg-gray-700 p-2 text-gray-900 dark:text-white"
             >
-              Open Menu
+              <BiMenu/>
             </button>
             <DarkToggle />
             {/* //user handling */}
