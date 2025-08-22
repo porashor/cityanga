@@ -25,10 +25,10 @@ const PricingHandle = ({ options, fullProductData }) => {
   }
   return (
     <div className="flex flex-col gap-3">
-        <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-yellow-500 py-5">৳ {totalPrice-30}</div>
+        <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-yellow-500 py-5">৳ {totalPrice}</div>
         <div className="flex gap-3 pb-2">
-            <span className="line-through text-slate-500">৳ {totalPrice}</span>
-            <span className="">{Math.floor(100* 30/totalPrice)}% save</span>
+            <span className="line-through text-slate-500">৳ {totalPrice + 30}</span>
+            <span className="">{Math.floor(100* 30/(totalPrice+30))}% save</span>
         </div>
         <hr/>
       <div>

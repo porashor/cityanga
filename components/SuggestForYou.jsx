@@ -15,7 +15,7 @@ const SuggestForYou = async ({lengthAmount}) => {
         <div className='flex flex-wrap justify-around items-center gap-2'>
           {
             suggest?.map((item, index)=>(
-              <Link href={{pathname: `/${item._id}`, query: {name: item.name, description: item.description, image: item.img, catagory: item.CategoryName, options: item.options[0].half, options: item.options[0].half}}} key={index}>
+              <Link href={item._id} key={index}>
                 <div className='w-[280px] md:w-[180px] flex flex-col items-start my-2 hover:shadow-md hover:shadow-slate-600 p-1 transition-all duration-200'>
                 <Image width={100} height={100} src={item.img} className='w-[180px] aspect-square object-cover' alt="" />
                 <p className='text-lg capitalize'>{item.name}</p>

@@ -114,7 +114,8 @@ export const cartFunction = async (name, email, price, product) => {
     const datam = await res.json();
     console.log(datam)
     if (datam?.email == email) {
-      const mainProduct = [...datam.product, product];
+      const otherProduct = datam.product.filter((item)=> item.id != product.id);
+      const mainProduct = [...otherProduct, product];
       const mainPrice = datam.price + price;
       try{
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart/${email}`, {
@@ -125,7 +126,9 @@ export const cartFunction = async (name, email, price, product) => {
           body: JSON.stringify({ price: mainPrice, product : mainProduct }),
         })
         const datam1 = await res.json();
-        console.log(datam1)
+        if(datam1){
+          window.location.reload();
+        }
       }catch(err){
         console.log(err)
         console.log("cart not updated")
@@ -140,6 +143,9 @@ export const cartFunction = async (name, email, price, product) => {
           body: JSON.stringify({ name, email, price, product }),
         });
         const datam2 = await res.json();
+        if(datam2){
+          window.location.reload();
+        }
         console.log(datam2);
       } catch (err) {
         console.log(err);
@@ -151,3 +157,51 @@ export const cartFunction = async (name, email, price, product) => {
     console.log("has problem");
   }
 };
+
+
+export const cartItemdelete = async (email, productId)=>{
+  try{
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart/${email}`);
+    const result = await res.json();
+    console.log("result", result)
+    if(result?.email == email){
+      const filterResult = result.product.filter((item)=> item.id != productId);
+      try{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart/${email}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ price: result.price, product : filterResult }),
+        })
+        const datam1 = await res.json();
+        if(datam1){
+          window.location.reload();
+        }
+        console.log("data", datam1)
+      }catch(err){
+        console.log(err)
+        console.log("cart not updated")
+      }
+    }
+  }catch(err){
+    console.log(err)
+  }
+}
+
+
+export const clearCart = async (email)=>{
+  try{
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart/${email}`, {
+      method: "DELETE",
+    })
+    const datam1 = await res.json();
+    if(datam1){
+      window.location.reload();
+    }
+    console.log("data", datam1)
+  }catch(err){
+    console.log(err)
+    console.log("cart not updated")
+  }
+}
