@@ -9,44 +9,40 @@ import Popup from "./Popup";
 import SignUp from "./SignUp";
 import Login from "./Login";
 import { BiMenu } from "react-icons/bi";
+import { getCartData } from "@/functions/FatchFunction";
 
 const Navber = () => {
   const [open, setOpen] = useState(false);
   const [user, setUser] = useState(false);
   const [targetForm, setTargetForm] = useState(false);
   const [data, setData] = useState({});
-  const [openAccount, setOpenAccount] = useState(false)
-  const [openCart, setCart] = useState(false)
-  const [cartQuantity, setCartQuantity] = useState({})
+  const [openAccount, setOpenAccount] = useState(false);
+  const [openCart, setCart] = useState(false);
+  const [cartQuantity, setCartQuantity] = useState({});
 
-  
-
-
-  useEffect( () => {
+  useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log(token)
+    console.log(token);
     if (token) {
       const maindata = jwtDecode(token);
       setUser(true);
       setData(maindata);
       const gettingData = async () => {
-        try{
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart/${maindata.email}`);
-      const data1 = await res.json();
-      setCartQuantity(data1)
-      console.log(data1)
-      }catch(err){
-        console.log(err)
-      }
-      }
+        try {
+          const data = await getCartData(maindata.email);
+          setCartQuantity(data);
+          console.log(data);
+        } catch (err) {
+          console.log(err);
+        }
+      };
       gettingData();
     }
-  }, [])
-  
-  console.log(data)
+  }, []);
 
+  console.log(data);
 
-  console.log(cartQuantity)
+  console.log(cartQuantity);
 
   return (
     <nav className="bg-[#f5f5f5] dark:bg-gray-800 antialiased">
@@ -56,10 +52,7 @@ const Navber = () => {
           <div className="flex items-center space-x-8">
             {/* logo */}
             <div className="shrink-0">
-              <a
-                href="/"
-                className="font-bold text-black dark:text-white"
-              >
+              <a href="/" className="font-bold text-black dark:text-white">
                 CHITAYNGA
               </a>
             </div>
@@ -80,28 +73,37 @@ const Navber = () => {
           </div>
           {/* cart and etc. area  */}
           <div className="flex items-center lg:space-x-2 relative">
-            <CartView openCart={openCart} cartData={cartQuantity}/>
+            <CartView openCart={openCart} cartData={cartQuantity} />
 
-            <AccountView openAccount={openAccount}/>
+            <AccountView openAccount={openAccount} />
             <button
               type="button"
               className="inline-flex lg:hidden items-center justify-center hover:bg-gray-100 rounded-md dark:hover:bg-gray-700 p-2 text-gray-900 dark:text-white"
             >
-              <BiMenu/>
+              <BiMenu />
             </button>
             <DarkToggle />
             {/* //user handling */}
             {user ? (
               <div className="flex gap-2">
                 <button
-                onClick={() => {setOpenAccount(false); setCart(!openCart)}}
+                  onClick={() => {
+                    setOpenAccount(false);
+                    setCart(!openCart);
+                  }}
                   type="button"
                   className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
                 >
-                  MyCart{cartQuantity?.product?.length > 0 ? `(${cartQuantity.product.length})` : ""}
+                  MyCart
+                  {cartQuantity?.product?.length > 0
+                    ? `(${cartQuantity.product.length})`
+                    : ""}
                 </button>
                 <button
-                  onClick={() => {setOpenAccount(!openAccount); setCart(false)}}
+                  onClick={() => {
+                    setOpenAccount(!openAccount);
+                    setCart(false);
+                  }}
                   type="button"
                   className="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white"
                 >
@@ -111,13 +113,19 @@ const Navber = () => {
             ) : (
               <div className="flex gap-2">
                 <button
-                  onClick={() => {setOpen(true); setTargetForm(true)}}
+                  onClick={() => {
+                    setOpen(true);
+                    setTargetForm(true);
+                  }}
                   className="dark:text-white"
                 >
                   SignUp
                 </button>
                 <button
-                  onClick={() =>  {setOpen(true); setTargetForm(false)}}
+                  onClick={() => {
+                    setOpen(true);
+                    setTargetForm(false);
+                  }}
                   className="dark:text-white"
                 >
                   LogIn
@@ -183,9 +191,11 @@ const Navber = () => {
         </div>
       </div>
       <Popup isOpen={open} onClose={setOpen}>
-        {
-          targetForm ? <SignUp falsei={setTargetForm}/> : <Login truthy={setTargetForm}/>
-        }
+        {targetForm ? (
+          <SignUp falsei={setTargetForm} />
+        ) : (
+          <Login truthy={setTargetForm} />
+        )}
       </Popup>
     </nav>
   );

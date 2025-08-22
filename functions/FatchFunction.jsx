@@ -205,3 +205,15 @@ export const clearCart = async (email)=>{
     console.log("cart not updated")
   }
 }
+
+
+export const getCartData = async (email)=>{
+  try{
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart/${email}`);
+    const datam1 = await res.json();
+    return datam1
+  }catch(err){
+    console.log(err)
+    console.log("cart data not get")
+  }
+}
