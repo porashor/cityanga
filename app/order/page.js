@@ -1,9 +1,9 @@
-import React from 'react'
+import OrdersSec from '@/components/OrdersSec'
 
 const page = () => {
   return (
-    <div>
-      orders now
+    <div className='dark:bg-[#213A54] dark:text-white'>
+      <OrdersSec/>
     </div>
   )
 }

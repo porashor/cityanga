@@ -5,7 +5,7 @@ import { cartItemdelete, clearCart } from '@/functions/FatchFunction';
 
 
 const CartTable = ({ cartData }) => {
-    const { product, price, email } = cartData ?? { product: [], totalPrice: 0, email: "" };
+    const { product, price, email, delivery } = cartData ?? { product: [], totalPrice: 0, email: "", delivery: 0 };
   console.log(cartData);
 
   return (
@@ -17,7 +17,7 @@ const CartTable = ({ cartData }) => {
             <th className="px-4 py-2 border">Size</th>
             <th className="px-4 py-2 border">Quantity</th>
             <th className="px-4 py-2 border">Price (৳)</th>
-            <th className="px-4 py-2 border">Delete</th>
+            {delivery > 0 ? "" : <th className="px-4 py-2 border">Delete</th>}
           </tr>
         </thead>
         <tbody>
@@ -28,14 +28,14 @@ const CartTable = ({ cartData }) => {
                 <td className="px-4 py-2 border">{item.size}</td>
                 <td className="px-4 py-2 border">{item.quantity}</td>
                 <td className="px-4 py-2 border">৳{item?.totalPrice}</td>
-                <td className="px-4 py-2 flex items-center justify-center"><BiTrash onClick={()=>cartItemdelete(email, item.id)} className='cursor pointer hover:text-red-600'/></td>
+                {delivery > 0 ? "" : <td className="px-4 py-2 flex items-center justify-center"><BiTrash onClick={()=>cartItemdelete(email, item.id)} className='cursor pointer hover:text-red-600'/></td>}
               </tr>
             ))
           }
           <tr className=" font-semibold">
-            <td className="px-4 py-2 border" colSpan={3}>Total Price</td>
-            <td className="px-4 py-2 border">৳{price}</td>
-            <td className="px-4 py-2 border"><button onClick={()=>clearCart(email)} className='hover:text-red-600'>Delete All</button></td>
+            <td className="px-4 py-2 border" colSpan={3}>Total Price{delivery > 0 ? `(price + delivery: ${delivery})` : ""}:</td>
+            <td className="px-4 py-2 border">৳{delivery > 0 ? price+delivery : price}</td>
+            {delivery > 0 ? "" : <td className="px-4 py-2 border"><button onClick={()=>clearCart(email)} className='hover:text-red-600'>Delete All</button></td>}
           </tr>
         </tbody>
       </table>

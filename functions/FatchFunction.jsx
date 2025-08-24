@@ -1,5 +1,3 @@
-import { data } from "autoprefixer";
-
 export const getData = async (params) => {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${params}`);
@@ -81,11 +79,6 @@ export const logoutUser = () => {
   localStorage.removeItem("token");
 };
 
-export const cartInitState = [];
-
-export const cartReducer = (state, action) => {
-  //
-};
 
 export const LocationChange = async (data, email) => {
   try {
@@ -215,5 +208,49 @@ export const getCartData = async (email)=>{
   }catch(err){
     console.log(err)
     console.log("cart data not get")
+  }
+}
+
+
+export const orderNow = async (data, location)=>{
+  const {name, email, price, product} = data ?? {name: "", email: "", price: 0, product: []};
+  const sendData = {
+    name,
+    email,
+    location,
+    delivery: 60,
+    price,
+    product
+  }
+  try{
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(sendData),
+    })
+    const datam1 = await res.json();
+    if(datam1){
+      window.location.reload();
+    }
+    console.log("data", datam1)
+  }catch(err){
+    console.log(err)
+    console.log("not ordered")
+  }
+}
+
+
+
+export const getOrderData = async (email)=>{
+  try{
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/${email}`);
+    const datam1 = await res.json();
+    console.log(datam1)
+    return datam1
+  }catch(err){
+    console.log(err)
+    console.log("order data not get")
   }
 }
