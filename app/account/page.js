@@ -20,11 +20,9 @@ const page = () => {
       const gettingData = async () => {
         try {
           const data = await getCartData(maindata.email);
-          setCartData(data);
-          console.log(data);
+          setCartData(data)
           const orderData = await getOrderData(maindata.email);
           setOrderData(orderData);
-          console.log(orderData);
         } catch (err) {
           console.log(err);
         }
@@ -32,9 +30,6 @@ const page = () => {
       gettingData();
     }
   }, []);
-
-  console.log(cartData);
-  console.log(accountdata);
   return Object.keys(accountdata).length > 0 ? (
     <div className="bg-white dark:bg-[#213a54] py-5 md:py-10">
       <div className="w-[90%] md:w-[80%] mx-auto my-5 md:my-10 bg-[#f5f5f5] dark:bg-[#192c3f] py-5 md:py-10 text-black dark:text-white px-2 rounded-xl md:flex">

@@ -6,7 +6,7 @@ const nextConfig = {
       'images.pexels.com',
       'cdn.pixabay.com',
     ]
-  },
+  }
 };
 
 export default nextConfig;

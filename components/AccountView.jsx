@@ -60,12 +60,12 @@ const AccountView = ({ openAccount }) => {
         </li>
         <li>
           <a
-            href="#"
+            href="/orderhistory"
             title=""
             className="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
           >
             {" "}
-            Billing Data{" "}
+            Order History{" "}
           </a>
         </li>
       </ul>

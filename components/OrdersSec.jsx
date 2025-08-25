@@ -3,19 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { getOrderData } from '@/functions/FatchFunction';
 import { jwtDecode } from 'jwt-decode';
 import CartTable from "@/components/CartTable";
-
-const orders = [
-  {
-    id: '#171-8448802-6458606',
-    date: '12 March 2019',
-    delivery: '16 March 2019',
-    recipient: 'Receptionist',
-    item: 'Pigeon Stainless Steel Swig Water Bottle 750ml (Set of 2)',
-    seller: 'E-Emporium',
-    price: '$413.00',
-  },
-];
-
+import { cencelOrder } from '@/functions/FatchFunction';
 
 
 export default function  OrdersSec() {
@@ -28,15 +16,13 @@ export default function  OrdersSec() {
             try {
               const orderData = await getOrderData(maindata.email);
               setOrderData(orderData);
-              console.log(orderData);
             } catch (err) {
-              console.log(err);
+              console.log("err");
             }
           };
           gettingData();
         }
       }, []);
-    console.log(orderData)
   return (
     <div className="max-w-4xl mx-auto px-4 py-6 dark:bg-[#213A54] dark:text-white">
       <h1 className="text-2xl font-semibold mb-4">My Orders</h1>
@@ -55,16 +41,22 @@ export default function  OrdersSec() {
           </div>
 
           <div className="mt-4 border-t pt-4">
-            <p className="font-medium">
-                {orderData?.product && orderData.product.length > 0 ? (
+            <div className="font-medium">
+                {
+                  orderData?.product && orderData.product.length > 0 ? (
                 <CartTable cartData={orderData} />
               ) : orderData?.product ? (
                 <div>order is empty</div>
               ) : (
                 <div>Loading...</div>
-              )}
-                </p>
+              )
+                }
+                </div>
             <p className="text-sm text-gray-500">Sold by: {'cityanga food shop'}</p>
+            <div className="mt-2 md:flex items-center justify-between gap-2">
+              <button onClick={()=>cencelOrder(orderData.name, orderData.email, "cenceled", orderData.product)} className='bg-red-400 hover:bg-red-600 text-white py-2 px-4 rounded'>Cencel Order</button>
+              <button onClick={()=>cencelOrder(orderData.name, orderData.email, "successful", orderData.product)} className='bg-green-400 hover:bg-green-600 text-white py-2 px-4 rounded'>Product Received</button>
+            </div>
             <div className="mt-2 flex flex-wrap gap-2">
               <button className="text-blue-600 hover:underline text-sm">Return or Replace</button>
               <button className="text-blue-600 hover:underline text-sm">Gift Receipt</button>
@@ -76,3 +68,5 @@ export default function  OrdersSec() {
     </div>
   );
 }
+
+

@@ -6,7 +6,6 @@ import { cartItemdelete, clearCart } from '@/functions/FatchFunction';
 
 const CartTable = ({ cartData }) => {
     const { product, price, email, delivery } = cartData ?? { product: [], totalPrice: 0, email: "", delivery: 0 };
-  console.log(cartData);
 
   return (
     <div className="overflow-x-auto">

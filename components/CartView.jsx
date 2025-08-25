@@ -62,9 +62,6 @@ const CartView = ({openCart, cartData}) => {
             <button onClick={()=>clearCart(email)} className="text-sm font-medium leading-none text-gray-500 dark:text-gray-400 bg-yellow-500 dark:bg-slate-800 dark:hover:bg-black py-2 px-4 rounded hover:bg-yellow-600">
               clear cart
             </button>
-            <button className="text-sm font-medium leading-none text-gray-500 dark:text-gray-400 bg-yellow-500 dark:bg-slate-800 dark:hover:bg-black py-2 px-4 rounded hover:bg-yellow-600">
-              place order
-            </button>
           </div>
           </div>
         )

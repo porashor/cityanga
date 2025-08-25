@@ -22,7 +22,6 @@ const Navber = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log(token);
     if (token) {
       const maindata = jwtDecode(token);
       setUser(true);
@@ -31,7 +30,6 @@ const Navber = () => {
         try {
           const data = await getCartData(maindata.email);
           setCartQuantity(data);
-          console.log(data);
         } catch (err) {
           console.log(err);
         }
@@ -40,9 +38,6 @@ const Navber = () => {
     }
   }, []);
 
-  console.log(data);
-
-  console.log(cartQuantity);
 
   return (
     <nav className="bg-[#f5f5f5] dark:bg-gray-800 antialiased">

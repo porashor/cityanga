@@ -79,7 +79,6 @@ export const logoutUser = () => {
   localStorage.removeItem("token");
 };
 
-
 export const LocationChange = async (data, email) => {
   try {
     const res = await fetch(
@@ -101,30 +100,34 @@ export const LocationChange = async (data, email) => {
 };
 
 export const cartFunction = async (name, email, price, product) => {
-  console.log(name, email, price, product)
+  console.log(name, email, price, product);
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart/${email}`);
     const datam = await res.json();
-    console.log(datam)
     if (datam?.email == email) {
-      const otherProduct = datam.product.filter((item)=> item.id != product.id);
+      const otherProduct = datam.product.filter(
+        (item) => item.id != product.id
+      );
       const mainProduct = [...otherProduct, product];
       const mainPrice = datam.price + price;
-      try{
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart/${email}`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ price: mainPrice, product : mainProduct }),
-        })
+      try {
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/cart/${email}`,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ price: mainPrice, product: mainProduct }),
+          }
+        );
         const datam1 = await res.json();
-        if(datam1){
+        if (datam1) {
           window.location.reload();
         }
-      }catch(err){
-        console.log(err)
-        console.log("cart not updated")
+      } catch (err) {
+        console.log(err);
+        console.log("cart not updated");
       }
     } else {
       try {
@@ -136,7 +139,7 @@ export const cartFunction = async (name, email, price, product) => {
           body: JSON.stringify({ name, email, price, product }),
         });
         const datam2 = await res.json();
-        if(datam2){
+        if (datam2) {
           window.location.reload();
         }
         console.log(datam2);
@@ -151,106 +154,212 @@ export const cartFunction = async (name, email, price, product) => {
   }
 };
 
-
-export const cartItemdelete = async (email, productId)=>{
-  try{
+export const cartItemdelete = async (email, productId) => {
+  try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart/${email}`);
     const result = await res.json();
-    console.log("result", result)
-    if(result?.email == email){
-      const filterResult = result.product.filter((item)=> item.id != productId);
-      try{
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart/${email}`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ price: result.price, product : filterResult }),
-        })
+    console.log("result", result);
+    if (result?.email == email) {
+      const filterResult = result.product.filter(
+        (item) => item.id != productId
+      );
+      try {
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/cart/${email}`,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              price: result.price,
+              product: filterResult,
+            }),
+          }
+        );
         const datam1 = await res.json();
-        if(datam1){
+        if (datam1) {
           window.location.reload();
         }
-        console.log("data", datam1)
-      }catch(err){
-        console.log(err)
-        console.log("cart not updated")
+        console.log("data", datam1);
+      } catch (err) {
+        console.log(err);
+        console.log("cart not updated");
       }
     }
-  }catch(err){
-    console.log(err)
+  } catch (err) {
+    console.log(err);
   }
-}
+};
 
-
-export const clearCart = async (email)=>{
-  try{
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart/${email}`, {
-      method: "DELETE",
-    })
+export const clearCart = async (email) => {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/cart/${email}`,
+      {
+        method: "DELETE",
+      }
+    );
     const datam1 = await res.json();
-    if(datam1){
+    if (datam1) {
       window.location.reload();
     }
-    console.log("data", datam1)
-  }catch(err){
-    console.log(err)
-    console.log("cart not updated")
+    console.log("data", datam1);
+  } catch (err) {
+    console.log(err);
+    console.log("cart not updated");
   }
-}
+};
 
-
-export const getCartData = async (email)=>{
-  try{
+export const getCartData = async (email) => {
+  try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart/${email}`);
     const datam1 = await res.json();
-    return datam1
-  }catch(err){
-    console.log(err)
-    console.log("cart data not get")
+    return datam1;
+  } catch (err) {
+    console.log(err);
+    console.log("cart data not get");
   }
-}
+};
 
-
-export const orderNow = async (data, location)=>{
-  const {name, email, price, product} = data ?? {name: "", email: "", price: 0, product: []};
+export const orderNow = async (data, location) => {
+  const { name, email, price, product } = data ?? {
+    name: "",
+    email: "",
+    price: 0,
+    product: [],
+  };
   const sendData = {
     name,
     email,
     location,
     delivery: 60,
     price,
-    product
-  }
-  try{
+    product,
+  };
+  try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(sendData),
-    })
+    });
     const datam1 = await res.json();
-    if(datam1){
+    if (datam1) {
       window.location.reload();
     }
-    console.log("data", datam1)
-  }catch(err){
-    console.log(err)
-    console.log("not ordered")
+    console.log("data", datam1);
+  } catch (err) {
+    console.log(err);
+    console.log("not ordered");
   }
-}
+};
 
-
-
-export const getOrderData = async (email)=>{
-  try{
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/${email}`);
+export const getOrderData = async (email) => {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/order/${email}`
+    );
     const datam1 = await res.json();
-    console.log(datam1)
-    return datam1
-  }catch(err){
-    console.log(err)
-    console.log("order data not get")
+    return datam1;
+  } catch (err) {
+    console.log(err);
+    console.log("order data not get");
   }
-}
+};
+
+export const cencelOrder = async (name, email, status, after) => {
+  const afterData = {
+    name,
+    email,
+    status,
+    after,
+  };
+
+  try {
+    const res1 = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/after/${email}`,
+    )
+    const result1 = await res1.json();
+    if (result1) {
+      const buildData1 = {
+        status: afterData.status,
+        date: new Date(),
+        order: afterData.after,
+      }
+      const updatedObject = [...result1.after, buildData1]
+      try {
+        const res2 = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/after/${email}`,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({after: updatedObject}),
+          }
+        )
+        const result2 = await res2.json();
+        if(result2){
+          const res4 = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/order/${email}`,
+      {
+        method: "DELETE",
+      }
+    );
+    const result4 = await res4.json();
+    if(result4){
+      window.location.href = "/";
+    }
+        }
+      } catch (error) {
+        console.log("after data not updated");
+      }
+    }else{
+      const buildData = {
+        status: afterData.status,
+        date: new Date(),
+        order: afterData.after,
+      }
+      const pushData = {
+        name: afterData.name,
+        email: afterData.email,
+        after: [buildData]
+      }
+      try {
+        const res3 = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/after`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(pushData),
+          }
+        )
+        const result3 = await res3.json();
+        if(result3){
+          const res5 = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/order/${email}`,
+      {
+        method: "DELETE",
+      }
+    );
+    const result5 = await res5.json();
+    if(result4){
+      window.location.href = "/";
+    }
+        }
+      } catch (error) {
+        console.log(error)
+      }
+      //post
+    }
+  } catch (error) {
+    console.log("after data not get", error);
+  }
+  
+};
+
+
