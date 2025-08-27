@@ -17,7 +17,7 @@ const page = async ({ params }) => {
         </div>
         <div className="bg-white dark:bg-[#162839] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_3fr_2fr] gap-2">
           <div>
-            <Image
+            <Image  loading="eager" 
             alt="no img"
               height={500}
               width={500}

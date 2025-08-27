@@ -15,7 +15,7 @@ const AllCategories = async () => {
           {
             data?.map((item, index)=>(
               <div key={index} className='w-[100%] aspect-square min-h-[150px] flex flex-col items-center justify-center hover:border hover:shadow-slate-600 transition-all duration-200'>
-                <Image src={item.img} width={100}
+                <Image  loading="eager"  src={item.img} width={100}
   height={100} className='w-[80%] aspect-square object-cover' alt="" />
                 <p className='text-lg capitalize'>{item.name}</p>
               </div>
