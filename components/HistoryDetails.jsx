@@ -1,11 +1,11 @@
 import React from "react";
-import html2pdf from 'html2pdf.js';
 
 const HistoryDetails = ({ open, setOpen, data, name, email, datefixed }) => {
   console.log(data, name, email);
   const delivery = 60;
   const totalPrice = data.order.reduce((acc, item) => acc + item.totalPrice, 0);
-  const handleDownload = () => {
+  const handleDownload = async () => {
+    const html2pdf = await import('html2pdf.js');
     const element = document.getElementById('invoice');
     const opt = {
       margin:       0.5,
@@ -15,7 +15,7 @@ const HistoryDetails = ({ open, setOpen, data, name, email, datefixed }) => {
       jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
     };
 
-    html2pdf().set(opt).from(element).save();
+    html2pdf.default().set(opt).from(element).save();
   };
   return (
     <div

@@ -64,11 +64,11 @@ const MobileNevView = ({
           </button>
         </li>
         <li className="w-full py-2 px-1 hover:bg-slate-100 dark:hover:bg-slate-600">
-          <button
+          <h1
             className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
           >
             Mode <DarkToggle />
-          </button>
+          </h1>
         </li>
         <li className="w-full py-2 px-1 hover:bg-slate-100 dark:hover:bg-slate-600">
           <button
