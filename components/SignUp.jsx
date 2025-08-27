@@ -10,7 +10,6 @@ import { userInitialState, userReducer, handleFunction, createUser } from "@/fun
 const SignUp = ({falsei}) => {
     const [formData, dispatch] = useReducer(userReducer, userInitialState);
 
-    console.log(formData)
   return (
     <form
       onSubmit={(e) => createUser(e, formData)}

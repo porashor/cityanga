@@ -4,7 +4,6 @@ import HistoryDetails from "./HistoryDetails";
 
 const HistoryOrderShow = ({ data, name, email }) => {
     const [open, setOpen] = useState(false);
-    console.log(data);
     const datefixed = `${new Date(data.date).getDate()}/${new Date(data.date).getMonth() + 1}/${new Date(data.date).getFullYear()}`
     const timefixed = `${new Date(data.date).getHours()}:${new Date(data.date).getMinutes()}:${new Date(data.date).getSeconds()}`
   return (

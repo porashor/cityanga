@@ -12,7 +12,6 @@ const Login = ({truthy}) => {
     const router = useRouter();
     const [formData, dispatch] = useReducer(userReducer, userInitialState);
 
-    console.log(formData)
   return (
     <form
       onSubmit={(e) => logUser(e, formData, )}

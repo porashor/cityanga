@@ -82,7 +82,7 @@ const Navber = () => {
                 <BiMenu onClick={() => setOpenMenu(!openMenu)} />
               )}
             </button>
-            <MobileNevView openAccount={openMenu}/>
+            <MobileNevView setOpenMenu={setOpenMenu} openMenu={openMenu} setCart={setCart} openAccount={openAccount} setOpenAccount={setOpenAccount} openCart={openCart} cartQuantity={cartQuantity} setOpen={setOpen} setTargetForm={setTargetForm}/>
             {user ? "": <DarkToggle />}
             {/* //user handling */}
             {user ? (
