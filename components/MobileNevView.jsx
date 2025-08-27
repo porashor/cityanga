@@ -38,8 +38,8 @@ const MobileNevView = ({
           <button
             onClick={() => {
               setOpenAccount(false);
-              setCart(!openCart);
-              setOpenMenu(!openMenu);
+              setCart(true);
+              setOpenMenu(false);
             }}
             type="button"
             className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
@@ -53,9 +53,9 @@ const MobileNevView = ({
         <li className="w-full py-2 px-1 hover:bg-slate-100 dark:hover:bg-slate-600">
           <button
             onClick={() => {
-              setOpenAccount(!openAccount);
+              setOpenAccount(true);
               setCart(false);
-              setOpenMenu(!openMenu);
+              setOpenMenu(false);
             }}
             type="button"
             className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"

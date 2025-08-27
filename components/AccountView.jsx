@@ -6,7 +6,7 @@ const AccountView = ({ openAccount }) => {
   return (
     <div
       id="userDropdown1"
-      className={`${openAccount? "md:block hidden" : "hidden"}  absolute top-10 left-0 z-10 w-56 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700`}
+      className={`${openAccount? "" : "hidden"}  absolute top-10 right-0 z-10 w-56 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700`}
     >
       <ul className="p-2 text-start text-sm font-medium text-gray-900 dark:text-white">
         <li>
