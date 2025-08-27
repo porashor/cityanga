@@ -77,6 +77,7 @@ export const logUser = async (e, formData, router) => {
 
 export const logoutUser = () => {
   localStorage.removeItem("token");
+  window.location.reload();
 };
 
 export const LocationChange = async (data, email) => {
@@ -360,6 +361,20 @@ export const cencelOrder = async (name, email, status, after) => {
     console.log("after data not get", error);
   }
   
+};
+
+
+export const AfterOrderHistory = async (email) => {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/after/${email}`
+    );
+    const datam1 = await res.json();
+    return datam1;
+  } catch (err) {
+    console.log(err);
+    console.log("order data not get");
+  }
 };
 
 

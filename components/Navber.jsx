@@ -8,8 +8,9 @@ import AccountView from "./AccountView";
 import Popup from "./Popup";
 import SignUp from "./SignUp";
 import Login from "./Login";
-import { BiMenu } from "react-icons/bi";
+import { BiMenu, BiX } from "react-icons/bi";
 import { getCartData } from "@/functions/FatchFunction";
+import MobileNevView from "./MobileNevView";
 
 const Navber = () => {
   const [open, setOpen] = useState(false);
@@ -19,6 +20,7 @@ const Navber = () => {
   const [openAccount, setOpenAccount] = useState(false);
   const [openCart, setCart] = useState(false);
   const [cartQuantity, setCartQuantity] = useState({});
+  const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -57,7 +59,6 @@ const Navber = () => {
                 <li key={index}>
                   <a
                     href={item.path}
-                    title=""
                     className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
                   >
                     {item.name}
@@ -73,14 +74,20 @@ const Navber = () => {
             <AccountView openAccount={openAccount} />
             <button
               type="button"
-              className="inline-flex lg:hidden items-center justify-center hover:bg-gray-100 rounded-md dark:hover:bg-gray-700 p-2 text-gray-900 dark:text-white"
+              className="inline-flex lg:hidden text-xl items-center justify-center hover:bg-gray-100 rounded-md dark:hover:bg-gray-700 p-2 text-gray-900 dark:text-white"
             >
-              <BiMenu />
+              {openMenu ? (
+                <BiX onClick={() => setOpenMenu(!openMenu)} />
+              ) : (
+                <BiMenu onClick={() => setOpenMenu(!openMenu)} />
+              )}
             </button>
-            <DarkToggle />
+            <MobileNevView openAccount={openMenu}/>
+            {user ? "": <DarkToggle />}
             {/* //user handling */}
             {user ? (
-              <div className="flex gap-2">
+              <div className="hidden md:block">
+                <div className="flex gap-2">
                 <button
                   onClick={() => {
                     setOpenAccount(false);
@@ -105,8 +112,9 @@ const Navber = () => {
                   Account
                 </button>
               </div>
+              </div>
             ) : (
-              <div className="flex gap-2">
+              <div className="hidden md:flex gap-2">
                 <button
                   onClick={() => {
                     setOpen(true);
