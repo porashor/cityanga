@@ -11,6 +11,10 @@ import Login from "./Login";
 import { BiMenu, BiX } from "react-icons/bi";
 import { getCartData } from "@/functions/FatchFunction";
 import MobileNevView from "./MobileNevView";
+import Image from "next/image";
+import Img from "@/public/light.png"
+
+
 
 const Navber = () => {
   const [open, setOpen] = useState(false);
@@ -50,7 +54,7 @@ const Navber = () => {
             {/* logo */}
             <div className="shrink-0">
               <a href="/" className="font-bold text-black dark:text-white">
-                CHITAYNGA
+                <Image src={Img} alt="" className="dark:invert" width={100} height={100}/>
               </a>
             </div>
             {/* links */}

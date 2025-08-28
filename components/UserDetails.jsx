@@ -11,13 +11,12 @@ const UserDetails = () => {
   const [open, setOpen] = useState(false);
   const [changeloacation, setChangeLocation] = useState("")
   useEffect(() => {
-    const data = localStorage.getItem("token");
-    const structuredData = jwtDecode(data);
-    if (data) {
-      setDetails(structuredData);
-    }
+    const data = localStorage.getItem("token")
+    if (typeof data === "string" && data.trim() !== "") {
+  const structuredData = jwtDecode(data);
+  setDetails(structuredData);
+}
   }, []);
-  console.log(details)
   return (
     <div className="py-5 px-2 relative">
       <div className="flex gap-4 text-xl items-center py-3">

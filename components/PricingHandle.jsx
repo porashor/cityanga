@@ -7,35 +7,45 @@ const PricingHandle = ({ options, fullProductData }) => {
   const [userjwt, setUserJwt] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState("half");
-  const totalPrice = options[0][size] * quantity 
+  const totalPrice = options[0][size] * quantity;
   useEffect(() => {
     const data = localStorage.getItem("token");
-    const structuredData = jwtDecode(data);
-    if (data) {
+    if (typeof data === "string" && data.trim() !== "") {
+      const structuredData = jwtDecode(data);
       setUserJwt(structuredData);
     }
-  }, [])
+  }, []);
   const product = {
     id: fullProductData._id,
     size,
     quantity,
     totalPrice,
     name: fullProductData.name,
-    img: fullProductData.img
-  }
+    img: fullProductData.img,
+  };
   return (
     <div className="flex flex-col gap-3">
-        <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-yellow-500 py-5">৳ {totalPrice}</div>
-        <div className="flex gap-3 pb-2">
-            <span className="line-through text-slate-500">৳ {totalPrice + 30}</span>
-            <span className="">{Math.floor(100* 30/(totalPrice+30))}% save</span>
-        </div>
-        <hr/>
+      <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-yellow-500 py-5">
+        ৳ {totalPrice}
+      </div>
+      <div className="flex gap-3 pb-2">
+        <span className="line-through text-slate-500">৳ {totalPrice + 30}</span>
+        <span className="">
+          {Math.floor((100 * 30) / (totalPrice + 30))}% save
+        </span>
+      </div>
+      <hr />
       <div>
         <div className="text-slate-500">Size: {size}</div>
         <div className="flex gap-5 justify-center text-xl ">
           {Object.keys(options[0]).map((item, index) => (
-            <button className={`uppercase p-3 text-black bg-slate-300 ${size == item ? "text-slate-500": ""}`} key={index} onClick={()=>setSize(item)}>
+            <button
+              className={`uppercase p-3 text-black bg-slate-300 ${
+                size == item ? "text-slate-500" : ""
+              }`}
+              key={index}
+              onClick={() => setSize(item)}
+            >
               {item}
             </button>
           ))}
@@ -72,8 +82,26 @@ const PricingHandle = ({ options, fullProductData }) => {
         </button>
       </div>
       <div className="flex gap-5">
-        <button className="bg-blue-500 text-white hover:text-slate-200 hover:bg-blue-600 py-2 px-6 text-xl">Buy Now</button>
-        <button className="bg-yellow-500 text-white hover:text-slate-200 hover:bg-yellow-600 py-2 px-6 text-xl" onClick={()=> cartFunction(userjwt?.name, userjwt?.email, totalPrice, product)}>Add Cart</button>
+        {userjwt.name ? (
+          <div>
+            {" "}
+            <button
+              className="bg-yellow-500 text-white hover:text-slate-200 hover:bg-yellow-600 py-2 px-6 text-xl"
+            >
+              Buy Now
+            </button>
+            <button
+              className="bg-yellow-500 text-white hover:text-slate-200 hover:bg-yellow-600 py-2 px-6 text-xl"
+              onClick={() =>
+                cartFunction(userjwt?.name, userjwt?.email, totalPrice, product)
+              }
+            >
+              Add Cart
+            </button>
+          </div>
+        ) : (
+          <button className="bg-yellow-500 text-white hover:text-slate-200 hover:bg-yellow-600 py-2 px-6 text-xl">Log In</button>
+        )}
       </div>
     </div>
   );
