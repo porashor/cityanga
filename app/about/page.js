@@ -1,6 +1,6 @@
 import AboutSection from '@/components/AboutSection'
 import Philosophy from '@/components/Philosophy'
-import MenuHighlight from '@/components/MenuHighlight'
+import MenuHighLight from '@/components/MenuHighLight'
 import TeamIntro from '@/components/TeamIntro'
 import LocationInfo from '@/components/LocationInfo'
 
@@ -10,7 +10,7 @@ const page = () => {
       <div className="max-w-5xl mx-auto space-y-16">
         <AboutSection />
         <Philosophy />
-        <MenuHighlight />
+        <MenuHighLight />
         <TeamIntro />
         <LocationInfo />
       </div>
